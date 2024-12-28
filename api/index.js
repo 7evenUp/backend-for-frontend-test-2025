@@ -81,9 +81,10 @@ app.post("/register", async (req, res) => {
   res.json({ token: data.session.access_token, type: data.session.token_type })
 })
 
-app.listen(process.env.PORT, () =>
+app.listen(process.env.PORT || 4000, () =>
   console.log(
-    new Date().toLocaleTimeString() +
-      `: Server is running on port ${process.env.PORT}...`
+    new Date().toLocaleTimeString() + `: Server is running on port 3000...`
   )
 )
+
+export default app
