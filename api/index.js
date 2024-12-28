@@ -1,5 +1,6 @@
 import express from "express"
 import bodyParser from "body-parser"
+import cors from "cors"
 import env from "dotenv"
 import { createClient } from "@supabase/supabase-js"
 
@@ -11,6 +12,7 @@ const supabase = createClient(
   process.env.DATABASE_API_KEY
 )
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 
